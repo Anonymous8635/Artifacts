@@ -112,6 +112,6 @@ if __name__ == '__main__':
     print("This action will alter the information in database.")
     confirm = input("Are you sure to parse the data? (y/n) ")
     if confirm == "y":
-        parse_data("/Users/chenyi/Desktop/ChatTester/TestGPT_ASE/information/Lang")
+        parse_data("")
     else:
         print("Canceled.")

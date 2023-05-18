@@ -51,7 +51,7 @@ class TestTask:
     def single_test(self):
         """
         Only run tests.
-        tests directory path, e.g., /data/share/TestGPT_ASE/result/scope_test%20230414210243%d3_1/1460%lang_1_f%ToStringBuilder%append%d3/5
+        tests directory path, e.g., /data/share/test/result/scope_test%20230414210243%d3_1/1460%lang_1_f%ToStringBuilder%append%d3/5
         """
         if check_java_version() != 11:
             raise Exception(Fore.RED + "Wrong java version! Need: java 11")
@@ -63,7 +63,7 @@ class TestTask:
     def all_test(self):
         """
         Run all test cases.
-        test_path: test cases directory path, e.g., /data/share/TestGPT_ASE/result/scope_test%20230414210243%d3_1/
+        test_path: test cases directory path, e.g., /data/share/test/result/scope_test%20230414210243%d3_1/
         target_path: target project path
         """
         if check_java_version() != 11:
@@ -73,7 +73,7 @@ class TestTask:
     def start_d4j(self):
         """
         Adaptive assignment for d4j tests.
-        test case path: /root/TestGPT_ASE/result_429/scope_test%20230428134414%/4950%Chart_8_f%Week%getYear%d1/1/temp
+        test case path: /root/test/result_429/scope_test%20230428134414%/4950%Chart_8_f%Week%getYear%d1/1/temp
         """
         # loop until the CPU utilization falls below the threshold
         while True:
@@ -90,7 +90,7 @@ class TestTask:
     def run_d4j(self):
         """
         Run single test using defects4j test api
-        test case path: /root/TestGPT_ASE/result_429/scope_test%20230428134414%/4950%Chart_8_f%Week%getYear%d1/1/temp
+        test case path: /root/test/result_429/scope_test%20230428134414%/4950%Chart_8_f%Week%getYear%d1/1/temp
         """
         d4j_script = 'scripts/d4j_test.sh'
         test_case_src = os.path.join(self.test_path, "temp")
@@ -124,9 +124,9 @@ class TestTask:
     def run_d4j_b(self, tests_src, threaded=True):
         """
         run tests at defects4j buggy revisions
-        :param tests_src: result directory, e.g., /root/TestGPT_ASE/result/
+        :param tests_src: result directory, e.g., /root/test/result/
         """
-        target_path = '/root/TestGPT_ASE/projects'
+        target_path = '/root/test/projects'
         if threaded:
             with concurrent.futures.ProcessPoolExecutor(max_workers=process_number) as executor:
                 for scope_tests in os.listdir(tests_src):

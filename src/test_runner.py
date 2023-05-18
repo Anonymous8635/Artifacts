@@ -12,8 +12,8 @@ class TestRunner:
         """
         :param tool: coverage tool (Only support cobertura or jacoco)
         :param test_path: test cases directory path e.g.:
-        /data/share/TestGPT_ASE/result/scope_test%20230414210243%d3_1/ (all test)
-        /data/share/TestGPT_ASE/result/scope_test%20230414210243%d3_1/1460%lang_1_f%ToStringBuilder%append%d3/5 (single test)
+        /data/share/test/result/scope_test%20230414210243%d3_1/ (all test)
+        /data/share/test/result/scope_test%20230414210243%d3_1/1460%lang_1_f%ToStringBuilder%append%d3/5 (single test)
         :param target_path: target project path
         """
         self.coverage_tool = tool
@@ -32,7 +32,7 @@ class TestRunner:
         """
         Run a single method test case with a thread.
         tests directory path, e.g.:
-        /data/share/TestGPT_ASE/result/scope_test%20230414210243%d3_1/1460%lang_1_f%ToStringBuilder%append%d3/5
+        /data/share/test/result/scope_test%20230414210243%d3_1/1460%lang_1_f%ToStringBuilder%append%d3/5
         """
         temp_dir = os.path.join(self.test_path, "temp")
         compiled_test_dir = os.path.join(self.test_path, "runtemp")
